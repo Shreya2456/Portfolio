@@ -9,8 +9,8 @@ const Skills = () => {
   const sectionRef = useRef(null);
 
   // Custom icons for each technology
-  const getTechIcon = (techName) => {
-    const icons = {
+  const getTechIcon = (techName: string) => {
+    const icons: Record<string, string> = {
       // Frontend
       "React": "⚛️",
       "JavaScript": "🟨",
@@ -23,7 +23,7 @@ const Skills = () => {
       "Bootstrap": "👢",
       "Redux": "🗂️",
       "Figma": "🎛️",
-      
+
       // Backend
       "Node.js": "🟢",
       "Express": "🚂",
@@ -32,14 +32,14 @@ const Skills = () => {
       "SQL": "🗃️",
       "PHP": "🐘",
       "Axios": "📡",
-      
+
       // Programming
       "C": "🔵",
       "C++": "➕",
       "Python": "🐍",
       "Java": "☕",
       "Go": "🐹",
-      
+
       // Tools
       "Git": "📚",
       "Docker": "🐳",
@@ -130,13 +130,13 @@ const Skills = () => {
     }
   };
 
-  const iconVariants = {
-    rest: { 
+  const iconVariants: any = {
+    rest: {
       scale: 1,
       y: 0,
       rotate: 0
     },
-    hover: { 
+    hover: {
       scale: 1.2,
       y: -5,
       rotate: [0, -10, 10, -5, 0],
@@ -156,8 +156,8 @@ const Skills = () => {
   };
 
   return (
-    <section 
-      id="skills" 
+    <section
+      id="skills"
       ref={sectionRef}
       className="min-h-screen py-20 px-4 bg-gradient-to-br from-background via-background to-purple-950/20 relative overflow-hidden"
     >
@@ -170,13 +170,13 @@ const Skills = () => {
 
       <div className="container mx-auto relative z-10">
         {/* Header */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <motion.div 
+          <motion.div
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
             transition={{ delay: 0.2, type: "spring" }}
@@ -185,7 +185,7 @@ const Skills = () => {
             <Sparkles className="w-4 h-4 text-cyan-400" />
             <span className="text-sm font-semibold text-cyan-400">Technical Arsenal</span>
           </motion.div>
-          
+
           <h1 className="text-5xl md:text-7xl font-black mb-6">
             <span className="bg-gradient-to-r from-white via-blue-200 to-cyan-200 bg-clip-text text-transparent">
               TECH
@@ -194,14 +194,14 @@ const Skills = () => {
               STACK
             </span>
           </h1>
-          
+
           <p className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
             Tools and technologies I master to build amazing digital experiences
           </p>
         </motion.div>
 
         {/* Category Tabs */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
@@ -213,11 +213,10 @@ const Skills = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setActiveCategory(category)}
-              className={`flex items-center gap-2 px-6 py-4 rounded-2xl font-semibold transition-all duration-300 border-2 backdrop-blur-sm ${
-                activeCategory === category
+              className={`flex items-center gap-2 px-6 py-4 rounded-2xl font-semibold transition-all duration-300 border-2 backdrop-blur-sm ${activeCategory === category
                   ? `bg-gradient-to-r ${skillCategories[category].color} text-white border-transparent shadow-lg shadow-blue-500/25`
                   : "bg-white/5 text-gray-300 border-white/10 hover:border-white/20 hover:bg-white/10"
-              }`}
+                }`}
             >
               {skillCategories[category].icon}
               {category}
@@ -244,7 +243,7 @@ const Skills = () => {
                 onMouseLeave={() => setHoveredSkill(null)}
               >
                 <Card className="p-4 bg-white/5 border border-white/10 backdrop-blur-xl rounded-2xl hover:border-white/20 transition-all duration-500 group-hover:bg-white/10 h-full flex flex-col">
-                  
+
                   {/* Skill Icon with Animation */}
                   <motion.div
                     variants={iconVariants}
@@ -254,14 +253,14 @@ const Skills = () => {
                     className="text-center mb-3 flex-1 flex flex-col items-center justify-center"
                   >
                     <div className="relative mb-3">
-                      <motion.span 
+                      <motion.span
                         className="text-3xl block"
                         whileHover={{ scale: 1.3 }}
                         transition={{ type: "spring", stiffness: 300 }}
                       >
                         {getTechIcon(skill.name)}
                       </motion.span>
-                      
+
                       {/* Orbital Dots */}
                       <motion.div
                         className="absolute inset-0"
@@ -297,7 +296,7 @@ const Skills = () => {
                           initial={{ strokeDashoffset: 251.2 }}
                           animate={{ strokeDashoffset: 251.2 - (251.2 * skill.level) / 100 }}
                           transition={{ delay: index * 0.1 + 0.5, duration: 1.5, ease: "easeOut" }}
-                          style={{ 
+                          style={{
                             strokeDasharray: 251.2,
                             color: skill.color
                           }}
@@ -323,11 +322,10 @@ const Skills = () => {
                           initial={{ scale: 0 }}
                           animate={{ scale: 1 }}
                           transition={{ delay: index * 0.1 + dot * 0.1 }}
-                          className={`w-1.5 h-1.5 rounded-full ${
-                            dot <= Math.ceil(skill.level / 20) 
-                              ? "bg-current" 
+                          className={`w-1.5 h-1.5 rounded-full ${dot <= Math.ceil(skill.level / 20)
+                              ? "bg-current"
                               : "bg-white/20"
-                          }`}
+                            }`}
                           style={{ color: skill.color }}
                         />
                       ))}
@@ -335,7 +333,7 @@ const Skills = () => {
                   </motion.div>
 
                   {/* Hover Effect */}
-                  <div 
+                  <div
                     className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                     style={{
                       background: `radial-gradient(circle at center, ${skill.color}15 0%, transparent 70%)`
@@ -373,7 +371,7 @@ const Skills = () => {
         </motion.div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         @keyframes float {
           0%, 100% { transform: translateY(0px) rotate(0deg); }
           50% { transform: translateY(-20px) rotate(180deg); }

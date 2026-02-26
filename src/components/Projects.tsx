@@ -5,8 +5,18 @@ import aidangon from "./ai.png";
 import dsavisual from "./dsavisualizer.png";
 import biddingImage from "./auction.jpeg";
 
+interface Project {
+  title: string;
+  description: string;
+  technologies: string[];
+  image: string;
+  codeUrl: string;
+  liveUrl: string;
+  status?: string;
+}
+
 const Projects = () => {
-  const projects = [
+  const projects: Project[] = [
     //project details start from here ......
     {
       title: "Online-Bidding Platform",
@@ -19,7 +29,7 @@ const Projects = () => {
     {
       title: "AI Dungeon Master",
       description: "AI Dungeon Master is an intelligent, real-time storytelling engine that generates dynamic RPG adventures, characters, and quests based on player choices.",
-      technologies: ["HTML", "TAILWINDCSS", "JAVASCRIPT","Google Gemini API"],
+      technologies: ["HTML", "TAILWINDCSS", "JAVASCRIPT", "Google Gemini API"],
       image: aidangon,
       codeUrl: "https://github.com/Ram9219/AI-Dungeon-Master",
       liveUrl: "https://shreya-ai.vercel.app/",
@@ -36,7 +46,7 @@ const Projects = () => {
       title: "DSA_Visualization Tool",
       description: "A web tool  which visualize all the data structures in one website.",
       technologies: ["JavaScript", "HTML", "TAILWINDCSS"],
-      image:dsavisual,
+      image: dsavisual,
       codeUrl: "https://github.com/Shreya2456/DSA_Visualization",
       liveUrl: "https://shreyadsa.vercel.app/",
     },

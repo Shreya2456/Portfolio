@@ -4,7 +4,7 @@ import profileImg from "./profile.jpg";
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-24 md:pt-32">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-float" />
@@ -27,9 +27,9 @@ const Hero = () => {
             <h1 className="text-5xl md:text-7xl font-bold gradient-text mb-4 leading -tight">
               Shreya Tripathi
             </h1>
-      
+
             <p className="text-2xl md:text-3xl text-foreground/80">
-              Full-Stack Web Developer 
+              Full-Stack Web Developer
             </p>
           </div>
 
