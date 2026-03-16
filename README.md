@@ -1,7 +1,7 @@
 <<<<<<< HEAD
 # Portfolio
 my personal web
-# Ramstack Showcase — Local setup
+# Showcase — Local setup
 
 This repository includes a Vite + React frontend and a small Node/Express backend used to send contact-form emails via SMTP (nodemailer).
 
@@ -19,14 +19,13 @@ This repository includes a Vite + React frontend and a small Node/Express backen
 1. Install frontend deps (run in repo root):
 
 ```powershell
-cd "C:\Users\ramku\Downloads\ramstack-showcase-main\ramstack-showcase-main"
 npm install
 ```
 
 5. Start the frontend (in another terminal):
 
 ```powershell
-cd "C:\Users\ramku\Downloads\ramstack-showcase-main\ramstack-showcase-main"
+
 npm run dev
 ```
 
@@ -57,7 +56,6 @@ If you want, I can also add a single `dev` script that runs frontend and backend
 
 ## Project info
 
-**URL**: ramsmain.vercel.app
 
 ## How can I edit this code?
 
